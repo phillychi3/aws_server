@@ -8,7 +8,7 @@ app.config["JSON_AS_ASCII"] = False
 
 
 
-@app.route("/json", methods=["GET"])
+@app.route("/neko", methods=["GET"])
 def jsonall():
     with open("neko_data.json", "r") as jsonFile: 
         data = json.load(jsonFile) 
