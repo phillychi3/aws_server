@@ -1,6 +1,6 @@
 import requests
 import time
-
+import threading
 
 
 
@@ -13,7 +13,7 @@ class use_neko:
     def neko_count(time_start):
         while True:
             time_end = time.time()
-            losttime-time_start-time_end
+            losttime=time_start-time_end
             
 
 
@@ -23,7 +23,7 @@ class use_neko:
 
     def go(self):
         while True:
-            r = requests.get(link)
+            r = requests.get(self.link)
             print(r)
 
 
