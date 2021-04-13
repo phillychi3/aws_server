@@ -5,6 +5,7 @@ import logging
 from yaspin import yaspin
 import random
 from ytlv import *
+import os
 class use_neko:
     def __init__(self):
         self.link="http://127.0.0.1:5000/neko"
@@ -13,6 +14,7 @@ class use_neko:
         self.control_code=0
         self.status_code=False
         self.server_count=0
+
     def control(self):
         q1=input("請輸入連結網址(link)")
         q2=input("請輸入黃金潮(數字)")
@@ -20,6 +22,8 @@ class use_neko:
         q3=input("請輸入是否啟用極限模式(yes/no)")
         if q1 != None:
             self.link=q1
+        else:
+            self.link="http://127.0.0.1:5000/neko"
         if q3=="yes":
             self.control_q3=True
             print("祝你好運")
@@ -95,8 +99,15 @@ class use_neko:
             time.sleep(1)
 
     def server03(self):
+        path=os.getcwd()
+        lines =  open(f"{path}\proxy.txt").read().splitlines()
+        proxy= random.choice(lines)
+        proxies = {
+        'http': 'http://' + proxy        
+         }
+
         while True:
-            r = requests.get(self.link)
+            r = requests.get(self.link,proxies=proxies)
             self.status_code=True
             if r.status_code!=200:
                 print("失去訂單")
@@ -106,8 +117,14 @@ class use_neko:
             
 
     def server04(self):
+        path=os.getcwd()
+        lines =  open(f"{path}\proxy.txt").read().splitlines()
+        proxy= random.choice(lines)
+        proxies = {
+        'http': 'http://' + proxy        
+         }
         while True:
-            r = requests.get(self.link)
+            r = requests.get(self.link,proxies=proxies)
             self.status_code=True
             if r.status_code!=200:
                 print("失去訂單")
@@ -121,7 +138,5 @@ class use_neko:
 if __name__ == '__main__':
     time_start = time.time()
     neko=use_neko()
-    # neko.control()
-    # neko.neko_count(time_start)
     neko.control()
 
