@@ -14,7 +14,7 @@ from ytlv import *
 import requests
 
 
-print('''
+print(r'''
       ___           ___           ___           ___     
      /\__\         /\  \         /\__\         /\  \    
     /::|  |       /::\  \       /:/  /        /::\  \   
@@ -101,7 +101,7 @@ class proxyserver(threading.Thread):
         lines =  open(f"{path}\proxy.txt").read().splitlines()
         proxy= random.choice(lines)
         proxies = {
-        'http': 'http://' + proxy        
+        'http': 'http://' + proxy        55
          }
 
         while True:
