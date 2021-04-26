@@ -101,7 +101,7 @@ class proxyserver(threading.Thread):
         lines =  open(f"{path}\proxy.txt").read().splitlines()
         proxy= random.choice(lines)
         proxies = {
-        'http': 'http://' + proxy        55
+        'http': 'http://' + proxy        
          }
 
         while True:
