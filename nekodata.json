@@ -1,0 +1,43 @@
+{
+    "neko1":{
+        "name":"neko1",
+        "url":"https://cdn.nekos.life/neko/neko115.jpeg"
+    },
+    "neko2":{
+        "name":"neko2",
+        "url":"https://cdn.nekos.life/neko/neko_163.jpeg"
+    },
+    "neko3":{
+        "name":"neko3",
+        "url":"https://cdn.nekos.life/neko/neko_342.jpg"
+    },
+    "neko4":{
+        "name":"neko4",
+        "url":"https://cdn.nekos.life/neko/neko_394.jpg"
+    },
+    "neko5":{
+        "name":"neko5",
+        "url":"https://cdn.nekos.life/neko/neko199.jpg"
+    },
+    "neko6":{
+        "name":"neko6",
+        "url":"https://cdn.nekos.life/neko/neko294.jpg"
+    },
+    "neko7":{
+        "name":"neko7",
+        "url":"https://cdn.nekos.life/neko/neko295.jpg"
+    },
+    "neko8":{
+        "name":"neko8",
+        "url":"https://cdn.nekos.life/neko/neko_148.jpg"
+    },
+    "neko9":{
+        "name":"neko9",
+        "url":"https://cdn.nekos.life/neko/neko275.jpeg"
+    },
+    "neko10":{
+        "name":"neko10",
+        "url":"https://cdn.nekos.life/neko/neko373.png"
+    }
+
+}
