@@ -103,16 +103,11 @@ class neko():
     def send(self):
         links = [];answer = []
         for i in range(int(self.long)):
-            randomthing=str(uuid.uuid4())
-            anss = randomthing
-            randomthing=randomthing.encode('utf8')
-            outdata = b65.b64encode(randomthing)
-            outdata = str(outdata)
             
-            outdata = outdata[2:50]
+            outdata = random.randint(1,10)
             
-            links.append(f"http://{self.url}:{self.port}/base64?base64={outdata}")
-            answer.append(anss)
+            links.append(f"http://{self.url}:{self.port}/neko?nekomame={outdata}")
+            answer.append("neko"+str(outdata))
 
         if self.Premium == True:
             path=os.getcwd()
