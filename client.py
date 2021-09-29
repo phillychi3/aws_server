@@ -2,6 +2,7 @@ import  grequests
 import uuid
 import threading
 import os
+import base64 as b65
 print(r'''
       ___           ___           ___           ___     
      /\__\         /\  \         /\__\         /\  \    
@@ -32,7 +33,7 @@ class show():
         self.windows()
         
 
-    def windows(self,count,success,fail):
+    def windows(self,count=None,success=None,fail=None):
         self.clean()
         print(fr'''
         -------------------------------------------------
@@ -66,8 +67,8 @@ class base64():
 
     def setUp(self):
         self.url = input("請輸入網址")
-        self.power = input("請輸入強度1~100")
-        self.long = input("請輸入長度1~20")
+        self.power = int(input("請輸入強度1~100"))
+        self.long = int(input("請輸入長度1~20"))
         self.start()
         
 
@@ -83,9 +84,13 @@ class base64():
         for i in range(int(self.long)):
             randomthing=str(uuid.uuid4())
             randomthing=randomthing.encode('utf8')
-            outdata = base64.b64encode(randomthing)
+            outdata = b65.b64encode(randomthing)
+            outdata = str(outdata)
+            
+            outdata = outdata[2:50]
+            
             links.append(f"{self.url}/base64?base64={outdata}")
-            answer.append(randomthing)
+            answer.append(outdata)
 
         reqs = (grequests.get(link) for link in links)
         responses = grequests.imap(reqs,grequests.Pool(len(links)))
@@ -100,12 +105,14 @@ class base64():
         for i in response:
             if i.text == answer[now]:
                 print(f"第{self.count}次成功")
+                
                 self.count += 1
                 self.success += 1
                 now += 1
                 self.update()
             else:
                 print(f"第{self.count}次失敗")
+                print(answer)
                 self.count += 1
                 self.fail += 1
                 now += 1

@@ -20,4 +20,4 @@ def main():
     neko = data[f"neko{random.randint(1,10)}"]
     return neko
 
-app.run()
+app.run(port = 12345)
