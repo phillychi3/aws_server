@@ -1,6 +1,6 @@
 from flask import Flask,request,jsonify
 import base64
-import request as rq
+import requests as rq
 app = Flask(__name__)
 
 @app.route("/")
