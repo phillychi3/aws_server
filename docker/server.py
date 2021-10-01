@@ -26,4 +26,4 @@ def base():
     print(base65)
     return base65
 
-app.run()
+app.run(port=80,path="0.0.0.0")
