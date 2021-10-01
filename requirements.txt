@@ -11,7 +11,7 @@ Flask
 beautifulsoup4
 
 # C:\Users\phill\Documents\coed_thing\aws_server\client.py: 1
-grequest
+grequests
 
 # C:\Users\phill\Documents\coed_thing\aws_server\docker\server.py: 3
 # C:\Users\phill\Documents\coed_thing\aws_server\oldThing\fk_neko\neko_fucker.py: 14
